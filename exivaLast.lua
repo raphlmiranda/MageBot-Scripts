@@ -1,3 +1,5 @@
+--[[ Working
+
 local exivaLast = function()
 
 	local target = GetTarget()
@@ -11,3 +13,5 @@ local exivaLast = function()
 end
 
 SetTimerCallback("exivaLast")
+
+]]--
