@@ -4,8 +4,8 @@ local gptimer=os.clock()-.40
 local flowerMove = function()
 
   CLOCK=os.clock()
-	if (CLOCK-gptimer<1.2) then return 0; end
-	gptimer=CLOCK
+  if (CLOCK-gptimer<1.2) then return 0; end
+  gptimer=CLOCK
 
   local flowerID = {2983, 2981, 2984}
   local Sx, Sy = Self.x, Self.y
