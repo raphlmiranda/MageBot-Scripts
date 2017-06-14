@@ -1,45 +1,40 @@
 local pushWRune = function()
 
-local keyhandler = {97, 98, 99, 100, 102, 103, 104, 105}
+-- local keyhandler = {97 {Numpad key 1}, 98{Numpad key 2}, 99{Numpad key 3}, 100{Numpad key 4}, 102{Numpad key 6}, 103{Numpad key 7}, 104{Numpad key 8}, 105{Numpad key 9}}
 
-local runeID = function()
+local target = GetTarget()
+
 	local rune = {3188, 3164, 3172}
 	for i=1, #rune do
 		local r = FindItem(rune[i])
 		if (r.quantity > 1) then
-			return rune[i]
+			local runeID = r
 		end
 	end
-end
-
-local target = GetTarget()
-
-for i=1, #keyhandler do
-	if (keyhandler[i] == 97) then
-		CastRuneTarget(runeID(), target.id)
+	if (IsKeyDown(97) ~= 0) then
+		CastRuneTarget(runeID, target.id)
 		ThrowItemGtoG(target.x,target.y, target.x-1, target.y-1, target.id, 100)
-	elseif (keyhandler[i] == 98) then
-		CastRuneTarget(runeID(), target.id)
+	elseif (IsKeyDown(98) ~= 0) then
+		CastRuneTarget(runeID, target.id)
 		ThrowItemGtoG(target.x,target.y, target.x, target.y-1, target.id, 100)
-	elseif (keyhandler[i] == 99) then
-		CastRuneTarget(runeID(), target.id)
+	elseif (IsKeyDown(99) ~= 0) then
+		CastRuneTarget(runeID, target.id)
 		ThrowItemGtoG(target.x,target.y, target.x+1, target.y-1, target.id, 100)
-	elseif (keyhandler[i] == 100) then
-		CastRuneTarget(runeID(), target.id)
+	elseif (IsKeyDown(100) ~= 0) then
+		CastRuneTarget(runeID, target.id)
 		ThrowItemGtoG(target.x,target.y, target.x-1, target.y, target.id, 100)
-	elseif (keyhandler[i] == 102) then
-		CastRuneTarget(runeID(), target.id)
+	elseif (IsKeyDown(102) ~= 0) then
+		CastRuneTarget(runeID, target.id)
 		ThrowItemGtoG(target.x,target.y, target.x+1, target.y, target.id, 100)
-	elseif (keyhandler[i] == 103) then
-		CastRuneTarget(runeID(), target.id)
+	elseif (IsKeyDown(103) ~= 0) then
+		CastRuneTarget(runeID, target.id)
 		ThrowItemGtoG(target.x,target.y, target.x+1, target.y-1, target.id, 100)
-	elseif (keyhandler[i] == 104) then
-		CastRuneTarget(runeID(), target.id)
+	elseif (IsKeyDown(104) ~= 0) then
+		CastRuneTarget(runeID, target.id)
 		ThrowItemGtoG(target.x,target.y, target.x+1, target.y, target.id, 100)
-	elseif (keyhandler[i] == 105) then
-		CastRuneTarget(runeID(), target.id)
+	elseif (IsKeyDown(105) ~= 0) then
+		CastRuneTarget(runeID, target.id)
 		ThrowItemGtoG(target.x,target.y, target.x+1, target.y+1, target.id, 100)
 	end
-end
-	
+
 end
