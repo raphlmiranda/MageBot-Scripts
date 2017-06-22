@@ -9,8 +9,8 @@ for _, c in pairs(ammunition) do
 		if string.lower(config) == string.lower(b.name) then
 			local id = b.id
 			local ammunitionID = FindItem(b.id)
-			if ammunitionID.quantity >= 10 and self.arrowct <= 20 then
-				ThrowItemCtoI(ammunitionID.num, ammunitionID.slot, SLOT_AMMO, id, 1)
+			if ammunitionID.quantity > 10 and self.arrowct < 20 then
+				ThrowItemCtoI(ammunitionID.num, ammunitionID.slot, SLOT_AMMO, id, ammunitionID.quantity)
 			else
 				return
 			end
