@@ -45,7 +45,6 @@ local runeID = 3188
    local name = target.name
 		UseSpell('exiva \"'..name)
 	end
-	end
 
 end
 
